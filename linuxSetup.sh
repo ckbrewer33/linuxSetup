@@ -43,3 +43,5 @@ sudo apt-get install spotify-client
 sudo apt-get update
 sudo apt-get install openssh-server
 
+# vim
+sudo apt-get install vim
