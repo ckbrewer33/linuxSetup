@@ -3,7 +3,7 @@
 
 
 # Setup git stuff
-sudo apt-get install git
+sudo apt-get install -y git
 git config --global user.name "Chris Brewer"
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 sudo apt-get install meld
