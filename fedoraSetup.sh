@@ -23,3 +23,7 @@ sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.micros
 dnf -y check-update
 dnf -y install code
 
+# Sublime Text 3
+rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
+dnf config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
+dnf -y install sublime-text
