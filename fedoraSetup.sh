@@ -27,3 +27,30 @@ dnf -y install code
 rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
 dnf config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
 dnf -y install sublime-text
+
+# Brave
+dnf config-manager --add-repo https://s3-us-west-2.amazonaws.com/brave-rpm-release/x86_64/
+rpm --import https://s3-us-west-2.amazonaws.com/brave-rpm-release/keys.asc
+dnf -y install brave
+
+# Docker
+dnf -y install dnf-plugins-core
+dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+dnf -y install docker-ce
+systemctl start docker
+
+  	# Plex
+	docker pull linuxserver/plex
+	docker create \
+		--name=plex \
+		--net=host \
+		--restart=always \
+		-e VERSION=latest \
+		-e PUID=1001 -e PGID=1001 \
+		-e TZ=America/Denver \
+		-v /home/docker/plex/config:/config \
+		-v /mnt/MediaServer2/TV:/data/tvs \
+		-v /mnt/MediaServer2/Movies:/data/movies \
+		-v /mnt/MediaServer2/"Micky Mouse Clubhouse":/data/mickey \
+		linuxserver/plex
+
