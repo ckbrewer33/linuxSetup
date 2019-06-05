@@ -13,7 +13,7 @@ EOF
 dnf install -y google-chrome-stable
 
 # node
-curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo bash -
+curl --silent --location https://rpm.nodesource.com/setup_10.x | sudo bash -
 dnf -y install nodejs
 
 # VS Code
